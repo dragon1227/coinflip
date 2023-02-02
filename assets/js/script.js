@@ -95,6 +95,10 @@ $(document).ready(()=>{
         cur_time = total;
         timer = setInterval(timerFunc, 10, total);
         my_state = null;
+        _bet_front_btn.removeClass("active");
+        _bet_back_btn.removeClass("active");
+        cur_bet = 0.001;
+        _bet_input.val(cur_bet);
     }
 
     const endTimerFunc = () => {
