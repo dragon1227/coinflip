@@ -3,11 +3,15 @@
     scroll-behavior: smooth;
 }
 
+nav {
+    background-color: #2e2e2e;
+}
+
 body {
     height: 100vh;
     display: flex;
     flex-flow: column;
-    background-color: #ebebeb;
+    background-color: #363636;
     overflow-x: hidden;
 }
 
@@ -17,14 +21,14 @@ main {
     /* overflow-y: scroll; */
 }
 
-main > .container {
-    background-color: white;
-    border: 1px #e5e5e5 solid;
+main > .page-container {
+    background-color: rgb(44, 44, 44);
+    border: 1px #4b4b4b solid;
     padding: 1rem;
 }
 
 footer {
-    background-color: rgb(10, 71, 141);
+    background-color: #2e2e2e;
     color: white;
     text-align: center;
     width: 100vw;
@@ -54,10 +58,11 @@ footer {
 .list-item {
     width: 100%;
     display: flex;
-    border-bottom: 1px solid #ededed;
+    border-bottom: 1px solid #494949;
     padding: 1rem;
     align-items: center;
     justify-content: space-between;
+    color: rgba(255, 255, 255, 0.39);
 }
 
 .user-list.right .list-item {
@@ -111,6 +116,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #202020;
 }
 
 
@@ -119,13 +125,13 @@ footer {
 }
 
 .coin-list-item.front {
-    background-color: #ffcfc4;
-    color: black;
+    /* background-color: #606060; */
+    color: white;
 }
 
 .coin-list-item.back {
-    background-color: #c5e3f7;
-    color: black;
+    /* background-color: #606060; */
+    color: white;
 }
 
 .coin-list-item.front.active {
@@ -141,7 +147,7 @@ footer {
 .clock-container {
     width: 100%;
     text-align: center;
-    background-color: rgb(153, 102, 43);
+    background-color: rgb(60 60 60);
     color: white;
     font-size: 5rem;
 }
@@ -158,4 +164,41 @@ footer {
     height:5rem;
     left:-2.5rem;
     top:-2.5rem;
+}
+
+.bet-input {
+    background-color: transparent !important;
+    background: linear-gradient(45deg, #8d0808, transparent);
+    color: white !important;
+    border: none;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.bet-input::selection,
+.bet-input:focus
+{
+    border: none;
+    box-shadow: none;
+}
+
+.bet-input::selection {
+    background-color: #164cbe;
+}
+
+.bet-input::placeholder {
+    color: rgba(255, 255, 255, 0.308);
+}
+
+.bet-input-container {
+    background-color: rgb(3, 74, 156);
+}
+
+.btn-bet-input {
+    border: none;
+    padding: 1.3rem;
+}
+
+.btn-bet-input:focus {
+    box-shadow: none;
 }

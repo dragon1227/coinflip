@@ -16,6 +16,7 @@ var coin_state = false; //F: front, T: back
 var my_state = null;
 var cur_time = _default_time;
 var cur_state = _game_state.idle;
+var cur_bet = 0.001;
 
 $(document).ready(()=>{
     
@@ -24,6 +25,10 @@ $(document).ready(()=>{
     var _spin_el = $(".spinner");
     var _bet_front_btn = $("#bet_front");
     var _bet_back_btn = $("#bet_back");
+    var _bet_input = $("#bet_input");
+    var _bet_input_minus = $("#bet_input_minus");
+    var _bet_input_plus = $("#bet_input_plus");
+    var _btn_roll_coin = $("#btn_roll_coin");
 
     _bet_front_btn.click(()=>{
         if (_game_state.count == cur_state){
@@ -39,6 +44,20 @@ $(document).ready(()=>{
             _bet_front_btn.removeClass ("active");
             my_state = true;
         }
+    });
+
+    _bet_input_minus.click(()=>{
+        if (cur_state != _game_state.idle) return;
+        if (cur_bet>=0.001) cur_bet -= 0.001;
+        cur_bet = Number(cur_bet.toFixed(3));
+        _bet_input.val(cur_bet);
+    });
+
+    _bet_input_plus.click(()=>{
+        if (cur_state != _game_state.idle) return;
+        if (cur_bet<=10.001) cur_bet += 0.001;
+        cur_bet = Number(cur_bet.toFixed(3));
+        _bet_input.val(cur_bet);
     });
 
 
@@ -85,8 +104,18 @@ $(document).ready(()=>{
         _coin_el.attr ("src", _default_coin_url+(coin_state?"back.png":"front.png"));
         if (my_state != null){
             setTimeout(()=>alert (my_state == coin_state ? "WIN":"LOSE"), 1000);
+            _time_el.text(my_state == coin_state ? "WIN !":"LOSE !");
         }
+        else _time_el.text(coin_state ? "BACK WIN":"FRONT WIN");
+        cur_state = _game_state.result;
+
+        cur_state = _game_state.idle;
     }
-    _spin_el.hide();
-    startTimerFunc (_default_time);
+
+    _btn_roll_coin.click(()=>{
+        if (cur_state != _game_state.idle) return;
+        _spin_el.hide();
+        startTimerFunc (_default_time);
+    });
+
 })

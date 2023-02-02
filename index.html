@@ -16,19 +16,19 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Coin Flip</a>
+          <a class="navbar-brand" href="#">Satoshi Coin</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <input class="form-control me-2 bg-dark border-none text-light" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
             <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
@@ -50,7 +50,7 @@
               </li>
               <li class="nav-item">
                 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
-              </li>
+              </li> -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     dragon1227
@@ -68,10 +68,15 @@
     </nav>
 
     <main>
-        <div class="container p-0">
+      <div class="container p-0">
+        <div class="row mx-0 my-3">
+          <button type="button" name="" id="btn_roll_coin" class="btn btn-primary" btn-lg btn-block">ROLL THE COIN</button>
+        </div>
+      </div>
+        <div class="container p-0 page-container">
             <div class="row g-0">
                 <div class="col-md-3 d-none d-md-block">
-                    <div class="bg-body rounded shadow-sm user-list left">
+                    <div class="user-list left">
                         <div class="list-item">
                           <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
                     
@@ -124,7 +129,7 @@
                 </div>
                 <div class="col-md-6 coin-dealer">
                     <div class="container clock-container">
-                        <span id="time_txt">30:00</span>
+                        <span id="time_txt">PLZ BET</span>
                     </div>
                     <div class="container coin-container">
                         <div class="container spinner-container">
@@ -136,6 +141,21 @@
                             </div>
                         </div>
                         <img id="coin_img" class="coin-img" src="assets/img/coin-front.png" alt="coin-front" />
+                    </div>
+                    <div class="container bet-input-container">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <button id="bet_input_minus" class="btn btn-primary btn-bet-input input-group-text">
+                            -
+                          </button>
+                        </div>
+                        <input id="bet_input" disabled max="10.0" min="0.001" class="form-control bet-input" type="text" name="" placeholder="Recipient's text" aria-label="Recipient's " value="0.001">
+                        <div class="input-group-append">
+                          <button id="bet_input_plus" class="btn btn-primary btn-bet-input input-group-text">
+                            +
+                          </button>
+                        </div>
+                      </div>
                     </div>
                     <div class="container">
                         <div class="row coin-list">
@@ -170,7 +190,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 d-none d-md-block">
-                    <div class="bg-body rounded shadow-sm user-list right">
+                    <div class="user-list right">
                         <div class="list-item">
                           <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
                     
