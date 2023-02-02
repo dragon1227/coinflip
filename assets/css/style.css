@@ -90,6 +90,8 @@ footer {
 
 .coin-container {
     background-color: blanchedalmond;
+    background-image: url("../img/coins-bg.jpg");
+    background-size: cover;
     width: 100%;
     display: flex;
     flex: 1;
@@ -160,10 +162,10 @@ footer {
 
 .spinner {
     position: absolute;
-    width:5rem;
-    height:5rem;
-    left:-2.5rem;
-    top:-2.5rem;
+    width:10rem;
+    height:10rem;
+    left:-5rem;
+    top:-5rem;
 }
 
 .bet-input {

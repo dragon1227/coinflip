@@ -92,6 +92,7 @@ $(document).ready(()=>{
     const startTimerFunc = (total) => {
         cur_state = _game_state.count;
         _spin_el.show();
+        cur_time = total;
         timer = setInterval(timerFunc, 10, total);
         my_state = null;
     }
@@ -114,8 +115,10 @@ $(document).ready(()=>{
 
     _btn_roll_coin.click(()=>{
         if (cur_state != _game_state.idle) return;
-        _spin_el.hide();
+        
         startTimerFunc (_default_time);
     });
+
+    _spin_el.hide();
 
 })
