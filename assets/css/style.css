@@ -1,5 +1,10 @@
+
+@media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+}
+
 body {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-flow: column;
     background-color: #ebebeb;
@@ -9,6 +14,7 @@ body {
 main {
     flex: 1;
     padding: 3rem;
+    /* overflow-y: scroll; */
 }
 
 main > .container {
@@ -36,4 +42,120 @@ footer {
 .user-avatar > img {
     min-width: 100%;
     min-height: 100%;
+}
+
+.user-list {
+    min-height: 100%;
+    max-height: 80vh;
+    overflow-x: hidden;
+    /* overflow-y: scroll; */
+}
+
+.list-item {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #ededed;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-list.right .list-item {
+    flex-direction: row;
+}
+
+.user-list.left .list-item {
+    flex-direction: row-reverse;
+}
+
+.list-item-text {
+    margin-bottom: 0;
+}
+
+.list-item-text .username {
+    display: none;
+}
+
+.coin-dealer {
+    display: flex;
+    min-height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.coin-container {
+    background-color: blanchedalmond;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+
+.coin-img {
+    min-width: 250px;
+    margin: 3rem auto;
+}
+
+.coin-list {
+    margin: 0;
+}
+
+.coin-list-item:hover {
+    cursor: pointer;
+}
+
+.coin-list-item {
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.coin-list-item > img {
+    width: 3rem;
+}
+
+.coin-list-item.front {
+    background-color: #ffcfc4;
+    color: black;
+}
+
+.coin-list-item.back {
+    background-color: #c5e3f7;
+    color: black;
+}
+
+.coin-list-item.front.active {
+    background-color: #8d2312;
+    color: white;
+}
+
+.coin-list-item.back.active {
+    background-color: #0d368d;
+    color: white;
+}
+
+.clock-container {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(153, 102, 43);
+    color: white;
+    font-size: 5rem;
+}
+
+.spinner-container {
+    position: absolute;
+    top:50%;
+    left:50%;
+}
+
+.spinner {
+    position: absolute;
+    width:5rem;
+    height:5rem;
+    left:-2.5rem;
+    top:-2.5rem;
 }
