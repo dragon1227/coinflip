@@ -1,0 +1,39 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    background-color: #ebebeb;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+    padding: 3rem;
+}
+
+main > .container {
+    background-color: white;
+    border: 1px #e5e5e5 solid;
+    padding: 1rem;
+}
+
+footer {
+    background-color: rgb(10, 71, 141);
+    color: white;
+    text-align: center;
+    width: 100vw;
+    padding: .3rem;
+}
+
+.user-avatar {
+    background-color: blue;
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.user-avatar > img {
+    min-width: 100%;
+    min-height: 100%;
+}
